@@ -1,28 +1,38 @@
+
 import java.util.Scanner;
 
+/**
+ * According to Module 1, we use classes and methods to define logic.
+ * This class encapsulates the sum calculation.
+ */
 public class SumOfNaturalNumbers {
 
-    // Task: The NumberSum function as a method of the Main class
+    /**
+     * NumberSum() takes an integer N and returns the sum.
+     * This uses the iterative approach suitable for a beginner level.
+     */
     public int NumberSum(int N) {
-        // Using the mathematical formula for efficiency: (N * (N + 1)) / 2
-        return N * (N + 1) / 2;
+        int sum = 0;
+        for (int i = 1; i <= N; i++) {
+            sum += i;
+        }
+        return sum;
     }
 
     public static void main(String[] args) {
+        // Scanner is used for standard input as per common Java practice [cite: 100]
         Scanner sc = new Scanner(System.in);
         
-        // Reading N from the first line
         if (sc.hasNextInt()) {
             int N = sc.nextInt();
             
-            // Instantiate the class to call the instance method
-            Main solver = new Main();
-            int result = solver.NumberSum(N);
+            // Creating an object to access the NumberSum method 
+            NaturalSum obj = new NaturalSum();
+            int total = obj.NumberSum(N);
             
-            // Printing the output
-            System.out.println(result);
+            // Output format: Print the sum [cite: 51]
+            System.out.println(total);
         }
-        
         sc.close();
     }
 }
